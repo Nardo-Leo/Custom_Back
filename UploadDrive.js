@@ -6,9 +6,10 @@ const path = require('path')
 
 const Google_Api_Folder_Id = process.env.Google_Api_Folder_Id
 
+const Cred_Google = process.env.Cred_Google
  
 const auth = new google.auth.GoogleAuth({
-    keyFile: './googledrive.json',
+    keyFile: Cred_Google,
     scopes: ['https://www.googleapis.com/auth/drive']
 })
 
