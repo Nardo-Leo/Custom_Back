@@ -1,0 +1,47 @@
+[
+  {
+    "caminhoImagemLogo": "logo7.png",
+    "caminhoImagemEstampa": "logo7.png",
+    "id": "7"
+  },
+  {
+    "caminhoImagemLogo": "logo5.png",
+    "caminhoImagemEstampa": "logo3.png",
+    "id": "8"
+  },
+  {
+    "caminhoImagemLogo": "magia.jpg",
+    "caminhoImagemEstampa": "Kaiba-blue eyes.jpg",
+    "id": "9"
+  },
+  {
+    "caminhoImagemLogo": "polimerizacao.jpg",
+    "caminhoImagemEstampa": "aviario.jpg",
+    "id": "10"
+  },
+  {
+    "caminhoImagemLogo": "orixaucus.jpg",
+    "caminhoImagemEstampa": "reliquias do milenio.jpg",
+    "id": "11"
+  },
+  {
+    "caminhoImagemLogo": "karibo.jpg",
+    "caminhoImagemEstampa": "blueeyesDg.jpg",
+    "id": "13"
+  },
+  {
+    "caminhoImagemLogo": "dgBranco.jpg",
+    "caminhoImagemEstampa": "kaibaCorp.jpg",
+    "id": "14"
+  },
+  {
+    "caminhoImagemLogo": "yugioh.jpg",
+    "caminhoImagemEstampa": "simbolo-slifer.jpg",
+    "id": "15"
+  },
+  {
+    "caminhoImagemLogo": "soldier.jpg",
+    "caminhoImagemEstampa": "farao-enigima.jpg",
+    "id": "16"
+  }
+]

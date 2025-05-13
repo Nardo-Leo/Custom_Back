@@ -1,0 +1,55 @@
+pakage.json
+
+{
+  "name": "back",
+  "version": "1.0.0",
+  "main": "index.cjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "start": "nodemon"
+  },
+
+  "dependencies": {
+    
+    "express": "^4.21.2",
+    "express-fileupload": "^1.5.1",
+    "file-saver": "^2.0.5"
+    
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+
+  },
+
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
+
+
+pakage-lock.json
+
+{
+  "name": "Back",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {
+    "name": "back",
+    "version": "0.0.0",
+    "dependencies":{
+      "cors": "^2.8.5",
+      "express": "^4.21.2",
+        "express-fileupload": "^1.5.1",
+        "file-saver": "^2.0.5"
+    },
+    "devDependencies":{
+      "eslint": "^9.13.0",
+      "nodemon": "^3.1.9"
+    }
+  }
+}
+

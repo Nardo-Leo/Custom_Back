@@ -1,0 +1,149 @@
+[
+  {
+    "modelo": "mangaCurta",
+    "cor": "branca",
+    "caminhoImagemFrente": "camisa1f.png",
+    "caminhoImagemCostas": "camisa1C.png",
+    "id": "0"
+  },
+  {
+    "modelo": "Manga Curta",
+    "cor": "Vermelha",
+    "caminhoImagemFrente": "camisa (26).png",
+    "caminhoImagemCostas": "camisa (26).png",
+    "id": "1"
+  },
+  {
+    "modelo": "Manga Longa",
+    "cor": "Verde",
+    "caminhoImagemFrente": "camisa (25).png",
+    "caminhoImagemCostas": "camisa (25).png",
+    "id": "2"
+  },
+  {
+    "modelo": "Manga Longa",
+    "cor": "Preta",
+    "caminhoImagemFrente": "camisa (24).png",
+    "caminhoImagemCostas": "camisa (24).png",
+    "id": "3"
+  },
+  {
+    "modelo": "Manga Longa",
+    "cor": "Cinza",
+    "caminhoImagemFrente": "camisa (23).png",
+    "caminhoImagemCostas": "camisa (13).png",
+    "id": "4"
+  },
+  {
+    "modelo": "Manga Longa",
+    "cor": "Preta",
+    "caminhoImagemFrente": "camisa (22).png",
+    "caminhoImagemCostas": "camisa (22).png",
+    "id": "5"
+  },
+  {
+    "modelo": "Manga Curta",
+    "cor": "Verde",
+    "caminhoImagemFrente": "camisa (21).png",
+    "caminhoImagemCostas": "camisa (21).png",
+    "id": "6"
+  },
+  {
+    "modelo": "Manga Curta",
+    "cor": "Verde",
+    "caminhoImagemFrente": "camisa (20).png",
+    "caminhoImagemCostas": "camisa (20).png",
+    "id": "7"
+  },
+  {
+    "modelo": "Manga Curta",
+    "cor": "Rosa",
+    "caminhoImagemFrente": "camisa (19).png",
+    "caminhoImagemCostas": "camisa (19).png",
+    "id": "8"
+  },
+  {
+    "modelo": "Manga Curta",
+    "cor": "Vermelha",
+    "caminhoImagemFrente": "camisa (18).png",
+    "caminhoImagemCostas": "camisa (18).png",
+    "id": "9"
+  },
+  {
+    "modelo": "Manga Curta",
+    "cor": "Azul",
+    "caminhoImagemFrente": "camisa (17).png",
+    "caminhoImagemCostas": "camisa (17).png",
+    "id": "10"
+  },
+  {
+    "modelo": "Manga Curta",
+    "cor": "Azul",
+    "caminhoImagemFrente": "camisa (16).png",
+    "caminhoImagemCostas": "camisa (16).png",
+    "id": "11"
+  },
+  {
+    "modelo": "Manga Curta",
+    "cor": "Cinza",
+    "caminhoImagemFrente": "camisa (15).png",
+    "caminhoImagemCostas": "camisa (15).png",
+    "id": "12"
+  },
+  {
+    "modelo": "Manga Curta",
+    "cor": "Preta",
+    "caminhoImagemFrente": "camisa (11).png",
+    "caminhoImagemCostas": "camisa (14).png",
+    "id": "13"
+  },
+  {
+    "modelo": "Manga Curta",
+    "cor": "Preta",
+    "caminhoImagemFrente": "camisa (7).png",
+    "caminhoImagemCostas": "camisa (8).png",
+    "id": "14"
+  },
+  {
+    "modelo": "Manga Longa",
+    "cor": "Branca",
+    "caminhoImagemFrente": "camisa (10).png",
+    "caminhoImagemCostas": "camisa (10).png",
+    "id": "15"
+  },
+  {
+    "modelo": "Manga Curta",
+    "cor": "Branca",
+    "caminhoImagemFrente": "camisa (5).png",
+    "caminhoImagemCostas": "camisa (5).png",
+    "id": "16"
+  },
+  {
+    "modelo": "Manga Curta",
+    "cor": "Branca",
+    "caminhoImagemFrente": "camisa (4).png",
+    "caminhoImagemCostas": "camisa (4).png",
+    "id": "17"
+  },
+  {
+    "modelo": "Manga Curta",
+    "cor": "Azul",
+    "caminhoImagemFrente": "camisa (3).png",
+    "caminhoImagemCostas": "camisa (3).png",
+    "id": "18"
+  },
+  {
+    "modelo": "Manga Longa",
+    "cor": "Vermelha",
+    "caminhoImagemFrente": "camisa (1).png",
+    "caminhoImagemCostas": "camisa (1).png",
+    "id": "19"
+  },
+  {
+    "modelo": "Manga Longa",
+    "cor": "Azul",
+    "caminhoImagemFrente": "camisa (2).png",
+    "caminhoImagemCostas": "camisa (2).png",
+    "id": "20"
+  }
+]

@@ -1,0 +1,239 @@
+
+//Para Adicionar Camisas
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    // Salvar em pastas diferentes dependendo do campo
+    if (file.fieldname === 'imagemFrente') {
+      cb(null, path.join(__dirname, 'imagens/camisas/frente'));
+    } else if (file.fieldname === 'imagemCostas') {
+      cb(null, path.join(__dirname, 'imagens/camisas/costas'));
+    } else {
+      cb(null, path.join(__dirname, 'uploads')); // fallback
+    }
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + '-' + file.originalname);
+  }
+});
+
+// Inicializar o multer
+const uploadImg = multer({ storage: storage });
+
+
+
+
+app.post("/addTshirt---",
+  upload.fields([
+    { name: 'imagemFrente', maxCount: 1 },
+    { name: 'imagemCostas', maxCount: 1 }
+  ]), async (req, res) => {
+    try {
+      console.log('Arquivos recebidos:', req.files);
+      /*
+      // Definir os caminhos para salvar as imagens
+      let imagePathFrente = __dirname + '/imagens/camisas/frente/' + req.files.imagemFrente.name;
+      let imagePathCostas = __dirname + '/imagens/camisas/costas/' + req.files.imagemCostas.name;
+  
+      imagePathFrente = imagePathFrente.replace(/\\/g, "/")
+      imagePathCostas = imagePathCostas.replace(/\\/g, "/")
+
+      */
+
+      const imagePathFrente = req.files.imagemFrente[0].filename;
+      const imagePathCostas = req.files.imagemCostas[0].filename;
+
+
+      console.log('caminho frenrte: ' + imagePathFrente)
+      console.log('caminho costas: ' + imagePathCostas)
+
+
+/*
+      // Mover a imagem da frente
+      await req.files.imagemFrente.mv(__dirname + '/imagens/camisas/frente/' + imagePathFrente);
+      console.log("Frente passou!!!");
+
+      // Mover a imagem das costas
+      await req.files.imagemCostas.mv(__dirname + '/imagens/camisas/costas/' + imagePathCostas);
+      console.log("Costas passou!!!");
+*/
+
+      // Criar objeto com os dados da camiseta
+      const newImage = {
+
+        // nome: req.body.name,
+        modelo: req.body.modelo,
+        cor: req.body.cor,
+        caminhoImagemFrente: imagePathFrente,
+        caminhoImagemCostas: imagePathCostas
+      };
+
+
+
+
+      // Adicionar ao JSON
+      addTshirt(newImage);
+
+      res.redirect('http://localhost:5173/')
+    } catch (err) {
+      console.error('Erro ao mover as  das camisas:', err);
+      res.status(500).send('Erro ao mover as imagens das camisas 2' + err);
+    }
+
+
+
+  });
+
+
+
+//Para adicionar Estampas
+
+
+const storageIcons = multer.diskStorage({
+  destination: function (req, file, cb) {
+    if (file.fieldname === 'imagemLogo') {
+      cb(null, path.join(__dirname, 'imagens/artes/logo'));
+    } else if (file.fieldname === 'imagemEstampa') {
+      cb(null, path.join(__dirname, 'imagens/artes/estampas'));
+    }
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname); // ou personaliza aqui se quiser
+  }
+});
+
+const uploadIcons = multer({ storage: storageIcons });
+
+
+
+
+app.post("/addIcons---", 
+  uploadIcons.fields([
+  { name: 'imagemLogo', maxCount: 1 },
+  { name: 'imagemEstampa', maxCount: 1 }
+]), async (req, res) => {
+  try {
+    const imagePathLogo = req.files.imagemLogo[0].filename;
+    const imagePathEstampa = req.files.imagemEstampa[0].filename;
+
+    console.log('caminho logo: ' + imagePathLogo);
+    console.log('caminho estampa: ' + imagePathEstampa);
+
+    const newImage = {
+      caminhoImagemLogo: imagePathLogo,
+      caminhoImagemEstampa: imagePathEstampa
+    };
+
+    addIcons(newImage);
+
+    res.redirect('http://localhost:5173/');
+  } catch (err) {
+    console.error('Erro ao mover as estampas:', err);
+    res.status(500).send('Erro ao mover as estampas: ' + err);
+  }
+});
+
+app.post("/upload-test", upload.single("image"), (req, res) => {
+  console.log("upload-test req.file:", req.file);
+  res.json({ ok: !!req.file });
+});
+
+
+
+app.post("/teste-upload", (req, res) => {
+  console.log("Recebeu POST em /teste-upload");
+  //res.status(200).send("OK");
+
+  res.json({ message: "Upload feito com sucesso" });
+
+});
+
+
+
+
+
+
+/*
+app.get("imgsCamisas", (req,res)=>{
+    res.sendFile(__dirname + '../dbTshirs.json' + req.params.name)
+})
+
+*/
+
+
+app.post(
+  "/upload---",
+  // 1) Primeiro middleware: envelopa o multer e captura erros
+  (req, res, next) => {
+    upload.single("image")(req, res, err => {
+      if (err) {
+        console.error("Multer falhou:", err);
+        return res.status(500).json({ error: err.message });
+      }
+      next(); // nenhum erro → vai para o próximo
+    });
+  },
+  // 2) Segundo middleware: seu handler real
+  async (req, res) => {
+    try {
+      console.log("✔️ ENTROU NO POST DRIVE");
+      console.log("req.file:", req.file);
+
+      const imagePath = req.file.path;
+      const fileName = req.file.originalname;
+      const imageUrl = await uploadToDrive(imagePath, fileName);
+
+      // Apaga o arquivo local
+      fs.unlinkSync(imagePath);
+
+      return res.status(200).json({ url: imageUrl });
+    } catch (error) {
+      console.error("Erro ao fazer upload:", error);
+      return res.status(500).json({ error: error.message });
+    }
+  }
+);
+
+
+/*
+
+app.post("/uploadaaaaaaaa", upload.single("image"), async (req, res) => {
+
+
+  console.log('ENTROU NO POST DRIVE')
+
+  console.log('ENTROU NO POST DRIVE');
+  console.log('req.file:', req.file);
+
+  try {
+    console.log(req.file);
+    res.json({ success: true });
+  } catch (err) {
+    console.error(err); // aqui você vê o erro no terminal!
+    res.status(500).json({ error: 'Erro ao processar upload' });
+  }
+
+
+
+
+
+  try {
+    const imagePath = req.file.path;
+    const fileName = req.file.originalname;
+
+    const imageUrl = await uploadToDrive(imagePath, fileName);
+
+    // Apague o arquivo temporário, se quiser
+    fs.unlinkSync(imagePath);
+
+    res.status(200).json({ url: imageUrl });
+  } catch (error) {
+    console.error("Erro ao fazer upload:", error);
+    res.status(500).json({ error: "Erro no upload" });
+  }
+
+
+})
+
+
+*/
