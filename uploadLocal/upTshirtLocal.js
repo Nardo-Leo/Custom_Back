@@ -23,22 +23,20 @@ app.post("/addTshirt", async (req, res) => {
  
         const pathFront = ((__dirname + '../../imagens/camisas/frente/'+imagePathFrente))
         const pathBack = ((__dirname + '../../imagens/camisas/costas/' + imagePathCostas))
-        //D:\Projetos\Grafica\Back\imagens\camisas\frente
         
         
-        // Mover a imagem da frente
+        
+       
       await req.files.imagemFrente.mv(pathFront);
-      console.log("Frente passou!!!");
-
-      // Mover a imagem das costas
+  
       await req.files.imagemCostas.mv(pathBack);
-      console.log("Costas passou!!!");
+      
 
 
-      // Criar objeto com os dados da camiseta
+
       const newImage = {
 
-         // nome: req.body.name,
+         
           modelo: req.body.modelo,
           cor: req.body.cor,
           caminhoImagemFrente: imagePathFrente,
@@ -48,7 +46,7 @@ app.post("/addTshirt", async (req, res) => {
 
       
 
-      // Adicionar ao JSON
+      
       addTshirt(newImage);
 
       res.redirect('http://localhost:5173/SystemGrafAdmin')

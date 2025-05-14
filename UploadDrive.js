@@ -40,7 +40,7 @@ async function UploadToDrive(filePath, fileName) {
             media: media,
             fields: 'id'
         })
-        //return response.data.id
+        
 
         await drive.permissions.create({
             fileId: response.data.id,

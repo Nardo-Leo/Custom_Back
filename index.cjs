@@ -36,10 +36,7 @@ app.use(cors());
 const port = process.env.PORT || 3000;
 
 
-app.use((err, req, res, next) => {
-  console.error("Erro no middleware global:", err);
-  res.status(500).json({ error: err.message });
-});
+
 
 
 app.use(session({ secret: '1233' }))
@@ -58,6 +55,11 @@ app.use('/imgsEstampas', express.static(path.join(__dirname + '/imagens/artes/es
 
 app.post("/addIcons",upIconsLocal)
 app.post("/addTshirt",upTshirLocal)
+
+
+app.get('/', (req,res)=>{
+  res.render('Camisas Personalizadas')
+})
 
 
 
@@ -95,8 +97,8 @@ app.get('/dbicones', (req, res) => {
 //Sessão do admin- inicio
 
 
-const acesso = 'Tsc@2025'
-const senha = 'Gfc2025@'
+const acesso = process.env.LOGIN
+const senha = process.env.PASSWORD
 
 app.post('/login', (req, res) => {
 
