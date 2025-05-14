@@ -58,7 +58,7 @@ app.post("/addTshirt",upTshirLocal)
 
 
 app.get('/', (req,res)=>{
-  res.render('Camisas Personalizadas')
+  res.send('Camisas Personalizadas')
 })
 
 
