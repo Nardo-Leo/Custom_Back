@@ -166,6 +166,6 @@ app.post(
 
 
 
-app.listen(port, () => {
+app.get('/', (req,res) => {
   console.log("Backend TShirt rodando...");
 });
