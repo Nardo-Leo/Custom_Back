@@ -166,9 +166,5 @@ app.post(
 
 
 
-app.get('/', (req,res) => {
-  console.log("Backend TShirt rodando...");
-});
-
 
 module.exports = app;
