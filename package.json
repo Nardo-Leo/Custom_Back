@@ -6,7 +6,7 @@
   "type": "commonjs",
 
   "engines": {
-    "node": "22x" 
+    "node": "22.x" 
   },
 
 
