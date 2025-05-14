@@ -66,7 +66,7 @@ app.get('/', (req,res)=>{
 
 app.get('/dbcamisas', (req, res) => {
   const dbPath = path.join(__dirname + '/dbTshirts.json');
-  // console.log('o dbpath :...+ ' + dbPath)
+
 
   try {
     const dbData = fs.readFileSync(dbPath, 'utf-8');
@@ -81,7 +81,7 @@ app.get('/dbcamisas', (req, res) => {
 
 app.get('/dbicones', (req, res) => {
   const dbPath = path.join(__dirname + '/dbIcons.json');
-  // console.log('o dbpath :...+ ' + dbPath)
+  
 
   try {
     const dbData = fs.readFileSync(dbPath, 'utf-8');
@@ -93,8 +93,6 @@ app.get('/dbicones', (req, res) => {
   }
 });
 
-
-//Sessão do admin- inicio
 
 
 const acesso = process.env.LOGIN
@@ -113,15 +111,10 @@ app.post('/login', (req, res) => {
 })
 
 
-//Sessao do admin- fim
-
-
-
-//Upload
 
 
 app.post("/add", (req, res) => {
-  console.log("Recebido:", req.body); // 👀 Verificar os dados recebidos
+  console.log("Recebido:", req.body);
 
   addImage(req.body);
 
@@ -132,17 +125,17 @@ app.post("/add", (req, res) => {
 
 app.post(
   "/upload",
-  // 1) Primeiro middleware: envelopa o multer e captura erros
+
   (req, res, next) => {
     upload.single("image")(req, res, err => {
       if (err) {
         console.error("Multer falhou:", err);
         return res.status(500).json({ error: err.message });
       }
-      next(); // nenhum erro → vai para o próximo
+      next(); 
     });
   },
-  // 2) Segundo middleware: seu handler real
+  
   async (req, res) => {
     try {
       console.log(" ENTROU NO POST DRIVE");
@@ -152,7 +145,7 @@ app.post(
       const fileName = req.file.originalname;
       const imageUrl = await uploadToDrive(imagePath, fileName);
 
-      // Apaga o arquivo local
+      
       fs.unlinkSync(imagePath);
 
       return res.status(200).json({ url: imageUrl });
@@ -166,5 +159,6 @@ app.post(
 
 
 
-
-module.exports = app;
+app.listen(port, (req, res) => {
+  console.log("Backend TShirt rodando...");
+});
