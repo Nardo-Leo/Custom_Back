@@ -49,7 +49,7 @@ app.post("/addTshirt", async (req, res) => {
       
       addTshirt(newImage);
 
-      res.redirect('http://localhost:5173/SystemGrafAdmin')
+      res.redirect('customfront.netlify.app/SystemGrafAdmin')
   } catch (err) {
       console.error('Erro ao mover as  das camisas:', err);
       res.status(500).send('Erro ao mover as imagens das camisas 2' + err);

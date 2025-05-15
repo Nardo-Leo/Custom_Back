@@ -102,9 +102,9 @@ app.post('/login', (req, res) => {
 
   
   if ((req.body.email == acesso) && (req.body.senha == senha)) {
-    res.redirect('http://localhost:5173/SystemGrafAdmin')
+    res.redirect('customfront.netlify.app/SystemGrafAdmin')
   } else {
-    res.redirect('http://localhost:5173/loginError')
+    res.redirect('customfront.netlify.app/loginError')
 
   }
 
