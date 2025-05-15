@@ -21,8 +21,8 @@ app.post("/addTshirt", async (req, res) => {
       console.log('caminho frenrte: ' + imagePathFrente)
       console.log('caminho costas: ' + imagePathCostas)
  
-        const pathFront = ((__dirname + '/imagens/camisas/frente/'+imagePathFrente))
-        const pathBack = ((__dirname + '/imagens/camisas/costas/' + imagePathCostas))
+        const pathFront = (('/imagens/camisas/frente/'+imagePathFrente))
+        const pathBack = (( '/imagens/camisas/costas/' + imagePathCostas))
         
         
         

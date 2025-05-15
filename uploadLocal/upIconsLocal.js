@@ -17,8 +17,8 @@ app.post("/addIcons", async (req, res) => {
       const imagePathEstampa = req.files.imagemEstampa.name;
   
   
-      const caminhoLogo = ((__dirname + '/imagens/artes/logo/' + imagePathLogo))
-      const caminhoEstampa = ((__dirname + '/imagens/artes/estampas/' + imagePathEstampa))
+      const caminhoLogo = (('/imagens/artes/logo/' + imagePathLogo))
+      const caminhoEstampa = (( '/imagens/artes/estampas/' + imagePathEstampa))
       console.log(caminhoLogo)
       console.log(caminhoEstampa)
 
