@@ -42,7 +42,7 @@ app.post("/addIcons", async (req, res) => {
 
       addIcons(newImage);
   
-      res.redirect('https://customfront.netlify.app/SystemGrafAdmin')
+      res.redirect(`https://shimmering-strudel-49ad27.netlify.app/SystemGrafAdmin`)
     } catch (err) {
       console.error('Erro ao mover as estampas:', err);
       res.status(500).send('Erro ao mover as Estampas 2' + err);

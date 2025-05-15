@@ -49,7 +49,7 @@ app.post("/addTshirt", async (req, res) => {
       
       addTshirt(newImage);
 
-      res.redirect(`https://customfront.netlify.app/SystemGrafAdmin`)
+      res.redirect(`https://shimmering-strudel-49ad27.netlify.app/SystemGrafAdmin`)
   } catch (err) {
       console.error('Erro ao mover as  das camisas:', err);
       res.status(500).send('Erro ao mover as imagens das camisas 2' + err);
