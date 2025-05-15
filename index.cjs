@@ -5,6 +5,8 @@ const cors = require("cors");
 const upTshirLocal = require('./uploadLocal/upTshirtLocal.js')
 const upIconsLocal = require('./uploadLocal/upIconsLocal.js')
 
+const upLoadWpp = require('./uploadDrive/upLoadWpp.js')
+
 
 const path = require("path");
 
@@ -21,9 +23,9 @@ const bodyParser = require('body-parser')
 
 
 //Para Upload pelo Google Drive
-const multer = require("multer");
-const upload = multer({ dest: "uploads/" });
-const uploadToDrive = require('./UploadDrive');
+//const multer = require("multer");
+//const upload = multer({ dest: "uploads/" });
+//const uploadToDrive = require('./UploadDrive');
 //const { Script } = require("vm");
 /****** */
 
@@ -55,6 +57,8 @@ app.use('/imgsEstampas', express.static(path.join(__dirname + '/imagens/artes/es
 
 app.post("/addIcons",upIconsLocal)
 app.post("/addTshirt",upTshirLocal)
+
+app.post("/upload", upLoadWpp)
 
 
 app.get('/', (req,res)=>{
@@ -121,7 +125,7 @@ app.post("/add", (req, res) => {
   res.json({ mensagem: "Imagem Adicionada" });
 });
 
-
+/*
 
 app.post(
   "/upload",
@@ -156,6 +160,7 @@ app.post(
   }
 );
 
+*/
 
 
 
