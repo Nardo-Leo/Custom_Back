@@ -58,7 +58,7 @@ app.use('/imgsEstampas', express.static(path.join(__dirname + '/imagens/artes/es
 app.post("/addIcons",upIconsLocal)
 app.post("/addTshirt",upTshirLocal)
 
-app.post("/upload", upLoadWpp)
+app.post("/upload", upLoadWpp) 
 
 
 app.get('/', (req,res)=>{
