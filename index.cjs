@@ -106,9 +106,9 @@ app.post('/login', (req, res) => {
 
   
   if ((req.body.email == acesso) && (req.body.senha == senha)) {
-    res.redirect(`https://shimmering-strudel-49ad27.netlify.app/SystemGrafAdmin`)
+    res.redirect(`https://test-tshirt-custom.netlify.app/SystemGrafAdmin`)
   } else {
-    res.redirect(`https://shimmering-strudel-49ad27.netlify.app/loginError`)
+    res.redirect(`https://test-tshirt-custom.netlify.app/loginError`)
 
   }
 
