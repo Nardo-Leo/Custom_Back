@@ -2,7 +2,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const uploadToDrive = reqire('../UploadDrive')
+const uploadToDrive = require('../UploadDrive')
 //const upload = require("./googleDriveUploader"); 
 
 const app = express();
