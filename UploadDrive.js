@@ -8,11 +8,11 @@ const Google_Api_Folder_Id = process.env.Google_Api_Folder_Id
 
 //const Cred_Google = process.env.Cred_Google
 
-const Cred_Google =JSON.parse(process.env.google_cred)
+const Cred_Google = JSON.parse(process.env.google_cred)
  
 const auth = new google.auth.GoogleAuth({
     //keyFile: Cred_Google
-    credentials: Cred_Googleed,
+    credentials: Cred_Google,
     scopes: ['https://www.googleapis.com/auth/drive']
 })
 
