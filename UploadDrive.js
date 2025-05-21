@@ -9,7 +9,8 @@ const Google_Api_Folder_Id = process.env.Google_Api_Folder_Id
 const Cred_Google = process.env.Cred_Google
  
 const auth = new google.auth.GoogleAuth({
-    keyFile: Cred_Google,
+    //keyFile: Cred_Google
+    credentials: JSON.parse(process.env.google_cred),
     scopes: ['https://www.googleapis.com/auth/drive']
 })
 
