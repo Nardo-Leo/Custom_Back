@@ -8,7 +8,7 @@ const Google_Api_Folder_Id = process.env.Google_Api_Folder_Id
 
 //const Cred_Google = process.env.Cred_Google
 
-const Cred_Google = process.env.Cred_Google
+const Cred_Google = JSON.parse(process.env.Cred_Google)
 
 console.log("AQUI ESTÁ ==>>..."+Cred_Google)
  
