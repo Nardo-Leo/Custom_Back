@@ -8,7 +8,8 @@ const Google_Api_Folder_Id = process.env.Google_Api_Folder_Id
 
 //const Cred_Google = process.env.Cred_Google
 
-const Cred_Google = JSON.parse(process.env.Cred_Google)
+const Credencial = JSON.parse(process.env.Cred_Google)
+const Cred_Google = Credencial.replace(/\\n/g, '\n')
 
 console.log("AQUI ESTÁ ==>>..."+Cred_Google)
  
