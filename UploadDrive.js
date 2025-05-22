@@ -8,10 +8,9 @@ const Google_Api_Folder_Id = process.env.Google_Api_Folder_Id
 
 //const Cred_Google = process.env.Cred_Google
 
-const Credencial = JSON.parse(process.env.Cred_Google)
-const Cred_Google = Credencial.replace(/\\n/g, '\n')
+const Cred_Google = JSON.parse(process.env.Cred_Google)
+Cred_Google.private_key = Cred_Google.private_key.replace(/\\n/g, '\n')
 
-console.log("AQUI ESTÁ ==>>..."+Cred_Google)
  
 const auth = new google.auth.GoogleAuth({
     //keyFile: Cred_Google
